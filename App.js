@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import {Homepage} from './homepage/homepage';
 import {About} from './homepage/about';
 import {Users} from './homepage/users';
@@ -30,7 +29,7 @@ class App extends React.Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Homepage</Link>
             </li>
             <li>
               <Link to="/about/">About</Link>
@@ -43,7 +42,7 @@ class App extends React.Component {
 
         <Route path="/" exact component={Homepage} />
         <Route path="/about/" component={About} />
-        <Route path="/users/" component={Users} />
+        <Route path="/users/" render = { () => <Users users_data = {this.state.usersdata} /> } />
       </div>
     </Router>
       
